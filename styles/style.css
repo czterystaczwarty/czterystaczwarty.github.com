@@ -1,0 +1,190 @@
+@import url(http://fonts.googleapis.com/css?family=Exo:300|Rambla&subset=latin,latin-ext);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  background: url(../images/bg.jpg) no-repeat 50% 50% #222222;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.75) 0 10px 50px -10px inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.75) 0 10px 50px -10px inset;
+  box-shadow: rgba(0, 0, 0, 0.75) 0 10px 50px -10px inset;
+}
+
+#card {
+  position: absolute;
+  width: 375px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -187.5px;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -ms-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px;
+}
+#card > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 5px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 2px 5px;
+}
+#card:hover > div {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+#card figure {
+  display: table;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+}
+#card figure hgroup,
+#card figure > div {
+  display: table-cell;
+  vertical-align: middle;
+}
+#card figure.front {
+  background: url(../images/bg-card.jpg) 50% 50% white;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) -1px -1px 1px inset, rgba(0, 0, 0, 0.3) 0 0 40px inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) -1px -1px 1px inset, rgba(0, 0, 0, 0.3) 0 0 40px inset;
+  box-shadow: rgba(0, 0, 0, 0.5) -1px -1px 1px inset, rgba(0, 0, 0, 0.3) 0 0 40px inset;
+}
+#card figure.back {
+  background: #191919;
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -webkit-box-shadow: rgba(255, 255, 255, 0.1) 1px 1px 1px inset, rgba(0, 0, 0, 0.1) 0 0 10px inset;
+  -moz-box-shadow: rgba(255, 255, 255, 0.1) 1px 1px 1px inset, rgba(0, 0, 0, 0.1) 0 0 10px inset;
+  box-shadow: rgba(255, 255, 255, 0.1) 1px 1px 1px inset, rgba(0, 0, 0, 0.1) 0 0 10px inset;
+}
+#card h1, #card h2, #card a {
+  text-align: center;
+  font-family: "Exo", "Helvetica", sans-serif;
+}
+#card a {
+  position: relative;
+  display: block;
+  opacity: 0.5;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-size: 14px;
+  font-family: 'Rambla';
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
+  line-height: 200px;
+}
+#card a:hover {
+  opacity: 1;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.75);
+}
+#card h1, #card h2 {
+  cursor: default;
+}
+#card h1 {
+  font-size: 30px;
+  line-height: 35px;
+  color: rgba(0, 0, 0, 0.7);
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
+}
+#card h2 {
+  font-size: 13px;
+  letter-spacing: 5px;
+}

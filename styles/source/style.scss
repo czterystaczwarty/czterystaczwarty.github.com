@@ -1,0 +1,135 @@
+@import "compass/reset";
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/css3/transform";
+@import "compass/css3/transition";
+
+@import url(http://fonts.googleapis.com/css?family=Exo:300|Rambla&subset=latin,latin-ext);
+
+
+$card-width: 375px;
+$card-height: 200px;
+//colors
+$bg-color: #222;
+$card-color: #fff;
+
+
+html, body {
+	height: 100%;
+}
+
+body {
+	position: relative;
+	background: url(../images/bg.jpg) no-repeat 50% 50% $bg-color;
+	// background-size: 100%;
+	font-family: Helvetica, Arial, sans-serif;
+	@include box-shadow(rgba(0,0,0, 0.75) 0 10px 50px -10px inset);
+}
+
+#card {
+	position: absolute;
+	width: $card-width;
+	height: $card-height;
+	top: 50%;
+	left: 50%;
+	margin-top: -($card-height/2);
+	margin-left: -($card-width/2);
+	@include perspective(800px);
+	
+	> div {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		@include transform-style(preserve-3d);
+		@include transition-property(transform);
+		@include transition-duration(1s);
+		@include box-shadow(rgba(0,0,0, 0.3) 0 2px 5px);
+	}
+	
+	&:hover {
+		>div {
+			@include rotateY(180deg);
+		}
+	}
+	
+	figure {
+		display: table;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		@include backface-visibility(hidden);
+		@include border-radius(2px);
+		
+		hgroup,
+		> div {
+			display: table-cell;
+			vertical-align: middle;
+		}
+		
+		&.front {
+			background: url(../images/bg-card.jpg) 50% 50% $card-color;
+			@include box-shadow(rgba(0,0,0, 0.5) -1px -1px 1px inset, rgba(0,0,0, 0.3) 0 0 40px inset);
+		}
+		&.back {
+			background: #191919;
+			@include rotateY(180deg);
+			@include box-shadow(rgba(255,255,255, 0.1) 1px 1px 1px inset, rgba(0,0,0, 0.1) 0 0 10px inset);
+			
+			// TODO: fix on FF
+			// > div {
+			// 	position: relative;
+			// 	overflow: hidden;
+				
+			// 	&:before {
+			// 		display: block;
+			// 		position: absolute;
+			// 		color: rgba(255,255,255, 0.03);
+			// 		content: '@';
+			// 		font-size: 290px;
+			// 		font-weight: bold;
+			// 		top: -40px;
+			// 		left: 5px;
+			// 		pointer-events: none;
+			// 	}
+			// }
+		}
+	}
+	h1, h2, a {
+		text-align: center;
+		font-family: "Exo", "Helvetica", sans-serif;
+	}
+	a {
+		position: relative;
+		display: block;
+		opacity: 0.5;
+		color: #fff;
+		text-decoration: none;
+		letter-spacing: 3px;
+		font-size: 14px;
+		font-family: 'Rambla';
+		@include transition-property(opacity);
+		@include transition-duration(1s);
+		line-height: $card-height;
+		
+		&:hover {
+			opacity: 1;
+			text-shadow: 0 0 3px rgba(255,255,255, 0.75);
+		}
+	}
+	
+	h1, h2 {
+		cursor: default;
+	}
+	
+	h1 {
+		font-size: 30px;
+		line-height: 35px;
+		color: rgba(0,0,0, 0.7);
+		text-shadow: 1px 1px 1px rgba(255,255,255, 0.75);
+	}
+	h2 {
+		
+		font-size: 13px;
+		letter-spacing: 5px;
+	}
+}
