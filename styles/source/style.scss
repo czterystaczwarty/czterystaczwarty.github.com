@@ -133,3 +133,26 @@ body {
 		letter-spacing: 5px;
 	}
 }
+footer {
+	position: absolute;
+	padding: 0 5px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	
+	a {
+		color: #fff;
+		opacity: 0.2;
+		font-size: 11px;
+		line-height: 20px;
+		text-decoration: none;
+		@include transition-duration(1s);
+		
+		&:hover {
+			opacity: 1;
+		}
+		&.hosted {
+			float: right;
+		}
+	}
+}
